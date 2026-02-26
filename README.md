@@ -33,21 +33,16 @@ Install this skill and your OpenClaw agent can do **everything a human can do on
 
 ## Installation
 
-### Option A — Download the `.skill` file (recommended)
-
-1. Go to [Releases](../../releases) and download the latest `ad-machine.skill`
-2. Unzip into your OpenClaw skills directory:
+### Option A — One-liner install (recommended)
 
 ```bash
-# Find your OpenClaw skills directory
 SKILLS_DIR=$(dirname $(which openclaw))/../lib/node_modules/openclaw/skills
-
-# Install
-unzip -o ad-machine.skill -d "$SKILLS_DIR"
+curl -L https://github.com/bertuccio-admachine/openclaw-skill-ad-machine/releases/latest/download/ad-machine.skill -o /tmp/ad-machine.skill
+unzip -o /tmp/ad-machine.skill -d "$SKILLS_DIR"
+openclaw gateway restart
 ```
 
-3. Restart the OpenClaw gateway (`openclaw gateway restart`) and verify:
-
+Verify:
 ```bash
 openclaw skills list | grep ad-machine
 ```
