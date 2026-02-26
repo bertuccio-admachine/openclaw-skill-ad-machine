@@ -1,0 +1,14 @@
+# Environment / secrets — NEVER commit these
+.env
+.env.local
+*.env
+*.token
+*.secret
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+
+# Build artifacts (we track ad-machine.skill directly in repo for easy download)
+dist/
